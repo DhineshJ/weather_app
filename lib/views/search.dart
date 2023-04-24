@@ -48,7 +48,7 @@ class _CitySearchState extends State<CitySearch> {
                 icon: const Icon(Icons.search, semanticLabel: 'Submit'),
                 onPressed: () {
                   BlocProvider.of<WeatherBloc>(context)
-                      .add(GetInitialWeatherDataEvent(_textController.text));
+                      .add(GetWeatherDataEvent(_textController.text));
 
                   Navigator.of(context).pop(_text);
                 }),

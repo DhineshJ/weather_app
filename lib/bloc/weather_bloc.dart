@@ -16,7 +16,7 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
 
     Color? thesms;
 
-    on<GetInitialWeatherDataEvent>((event, emit) async {
+    on<GetWeatherDataEvent>((event, emit) async {
       final response =
           await _weatherDataSource.getInitialResponse(event.cityName);
       final data = WeatherReport.fromJson(json.decode(response.body));

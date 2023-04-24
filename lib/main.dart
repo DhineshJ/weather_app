@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => WeatherBloc(WeatherDataSource())
-          ..add(GetInitialWeatherDataEvent("London")),
+          ..add(GetWeatherDataEvent("London")),
         child: const MyHomePage(title: 'Flutter Weather'),
       ),
     );
