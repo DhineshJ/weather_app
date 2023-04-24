@@ -40,8 +40,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  // ignore: prefer_typing_uninitialized_variables
-  var themes;
+   
+   Color? themes;
   late bool switchStatus;
   @override
   Widget build(BuildContext context) {
