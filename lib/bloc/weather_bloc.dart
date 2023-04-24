@@ -37,29 +37,16 @@ class WeatherBloc extends Bloc<WeatherEvent, WeatherState> {
     on<TemperatureConversion>((event, emit) {
       switchStatus = event.switchStatus;
 
-      if (((state as CityWeatherState).switchStatus == true)) {
-        emit(
-          CityWeatherState(
-              (state as CityWeatherState).cityName,
-              (state as CityWeatherState).minTemp,
-              (state as CityWeatherState).maxTemp,
-              (state as CityWeatherState).tempType,
-              (state as CityWeatherState).color,
-              ((state as CityWeatherState).currentTemp * 9 / 5) + 32,
-              switchStatus),
-        );
-      } else {
-        emit(
-          CityWeatherState(
-              (state as CityWeatherState).cityName,
-              (state as CityWeatherState).minTemp,
-              (state as CityWeatherState).maxTemp,
-              (state as CityWeatherState).tempType,
-              (state as CityWeatherState).color,
-              (state as CityWeatherState).currentTemp,
-              switchStatus),
-        );
-      }
+      emit(
+        CityWeatherState(
+            (state as CityWeatherState).cityName,
+            (state as CityWeatherState).minTemp,
+            (state as CityWeatherState).maxTemp,
+            (state as CityWeatherState).tempType,
+            (state as CityWeatherState).color,
+            ((state as CityWeatherState).currentTemp * 9 / 5) + 32,
+            switchStatus),
+      );
     });
   }
 
